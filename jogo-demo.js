@@ -6,7 +6,8 @@ const prompt = require("prompt-sync")();
 // ===== CONTROLE DO JOGO =====
 let local = "vila";        // onde o herói está agora
 let jogando = true;        // o jogo continua enquanto for true
-const TESTE = false;       // true = a sorte fica fixa, para o roteiro de teste
+const TESTE = false; 
+const vidaMaxima = 10      // true = a sorte fica fixa, para o roteiro de teste
 
 // ===== HERÓI =====
 let nome = prompt("Qual é o nome do seu herói? ");
@@ -39,7 +40,7 @@ while (jogando) {
       local = "floresta";
     } else if (escolha === "2") {
       local = "poco";
-    }''
+    } ''
   } else if (local === "floresta") {
     console.log("");
     console.log("[FLORESTA] Galhos fechados. Algo se mexe no chão.");
@@ -72,8 +73,8 @@ while (jogando) {
       local = "vila";
     } else if (escolha === "2") {
       vida = vida + 3
-      if(vida > 10){
-        vida = 10
+      if (vida > vidaMaxima) {
+        vida = vidaMaxima
       }
       console.log("A água é gelada. Vida: " + vida);
     } else if (escolha === "3" && inventario.includes("moeda furada")) {
